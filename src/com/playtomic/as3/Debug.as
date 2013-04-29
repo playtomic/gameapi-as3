@@ -1,0 +1,1 @@
+﻿package com.playtomic.as3 {		import flash.text.TextField;		public class Debug {				public static var Enabled:Boolean = false;		public static var LogTo:TextField				public static function log(message:String):void 		{			if (Enabled)			{				trace(message);			}		}	}}

@@ -86,9 +86,9 @@ package com.playtomic.as3
 				assertTrue(section, "Received scores", scores.length > 0);
 				assertTrue(section, "Received numscores", numscores > 0);
 				if(scores.length > 1) {
-					assertTrue(section, "First score is less than second", scores[0].points > scores[1].points);
+					assertTrue(section, "First score is greater than second", scores[0].points > scores[1].points);
 				} else {
-					assertTrue(section, "First score is less than second forced failure", false);
+					assertTrue(section, "First score is greater than second forced failure", false);
 				}
 				done();
 			});

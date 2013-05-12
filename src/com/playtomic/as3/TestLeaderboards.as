@@ -31,13 +31,23 @@ package com.playtomic.as3
 					assertTrue(section + "#2", "Request succeeded", r.success);
 					assertEquals(section + "#2", "Rejected duplicate score", r.errorcode, 209);
 					
-					// duplicate score gets allowed
-					score.allowduplicates = true;
+					// better score gets accepted
+					score.points = 11000;
 					
 					Leaderboards.save(score, function(r:Response):void {
+						
 						assertTrue(section + "#3", "Request succeeded", r.success);
 						assertEquals(section + "#3", "No errorcode", r.errorcode, 0);
-						done();
+					
+						// score gets allowed
+						score.points = 9000;
+						score.allowduplicates = true;
+						
+						Leaderboards.save(score, function(r:Response):void {
+							assertTrue(section + "#4", "Request succeeded", r.success);
+							assertEquals(section + "#4", "No errorcode", r.errorcode, 0);
+							done();
+						});
 					});
 				});
 			});

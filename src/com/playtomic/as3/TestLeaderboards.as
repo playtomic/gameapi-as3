@@ -163,5 +163,131 @@ package com.playtomic.as3
 				done();
 			});
 		}
+		
+		public static function friendsscores(done:Function):void {
+			
+			var section:String = "TestLeaderboards.friendsscores";
+			var playerids:Array = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+			var points:int = 0;
+			
+			function nextPlayerId():void
+			{			
+				points += 1000;
+				var playerid:String = playerids.shift();
+				
+				var score:Object=  {
+					name: "playerid" + playerid,
+					playerid: playerid,
+					table: "friends" + rnd,
+					points: points,
+					highest: true,
+					fields: {
+						rnd: rnd
+					}
+				};
+				
+				Leaderboards.save(score, function(r:Response):void {
+					if(playerids.length > 0)
+					{
+						nextPlayerId();
+					} 
+					else 
+					{
+						var list:Object = {
+							table: "friends" + rnd,
+							perpage: 3,
+							friendslist: ["1", "2", "3"]
+						};
+						
+						Leaderboards.list(list, function(scores:Array, numscores:int, r:Response):void {
+							scores = scores || [];
+							numscores = numscores || -1;
+							
+							assertTrue(section, "Request succeeded", r.success);
+							assertEquals(section, "No errorcode", r.errorcode, 0);
+							assertTrue(section, "Received 3 scores", scores.length == 3);
+							assertTrue(section, "Received numscores 3", numscores == 3);
+							assertTrue(section, "Player id #1", scores[0].playerid == "3");
+							assertTrue(section, "Player id #2", scores[1].playerid == "2");
+							assertTrue(section, "Player id #3", scores[2].playerid == "1");
+							
+							done();
+						});
+					}
+				});
+			}
+			
+			nextPlayerId();
+		}
+		
+		public static function ownscores(done:Function):void {
+			
+			var section:String = "TestLeaderboards.ownscores";
+			var points:int = 0;
+			var saved:int = 0;
+			
+			function nextPlayerId():void
+			{			
+				points += 1000;
+				saved++;
+				
+				var score:Object=  {
+					name: "test account",
+					playerid: "test@testuri.com",
+					table: "personal" + rnd,
+					points: points,
+					highest: true,
+					allowduplicates: true,
+					fields: {
+						rnd: rnd
+					}
+				};
+				
+				Leaderboards.save(score, function(r:Response):void {
+					if(saved < 9)
+					{
+						nextPlayerId();
+					} 
+					else 
+					{
+						var finalscore:Object=  {
+							name: "test account",
+							playerid: "test@testuri.com",
+							table: "personal" + rnd,
+							points: 3000,
+							highest: true,
+							allowduplicates: true,
+							fields: {
+								rnd: rnd
+							},
+							perpage: 5
+						};
+						
+						Leaderboards.saveAndList(finalscore, function(scores:Array, numscores:int, r:Response):void {
+							scores = scores || [];
+							numscores = numscores || -1;
+							
+							assertTrue(section, "Request succeeded", r.success);
+							assertEquals(section, "No errorcode", r.errorcode, 0);
+							assertTrue(section, "Received 5 scores", scores.length == 5);
+							assertTrue(section, "Received numscores 10", numscores == 10);
+							assertTrue(section, "Score 1 ranked 6", scores[0].rank == 6);
+							assertTrue(section, "Score 2 ranked 7", scores[1].rank == 7);
+							assertTrue(section, "Score 3 ranked 8", scores[2].rank == 8);
+							assertTrue(section, "Score 4 ranked 9", scores[3].rank == 9);
+							assertTrue(section, "Score 5 ranked 10", scores[4].rank == 10);
+							assertTrue(section, "Score 1 points", scores[0].points == 4000);
+							assertTrue(section, "Score 2 points", scores[1].points == 3000);
+							assertTrue(section, "Score 3 points", scores[2].points == 3000);
+							assertTrue(section, "Score 4 points", scores[3].points == 2000);
+							assertTrue(section, "Score 5 points", scores[4].points == 1000);
+							done();
+						});
+					}
+				});
+			}
+			
+			nextPlayerId();
+		}
 	}
 }

@@ -53,6 +53,8 @@ package com.playtomic.as3
 					TestLeaderboards.highscores,
 					TestLeaderboards.lowscores,
 					TestLeaderboards.allscores,
+					TestLeaderboards.friendsscores,
+					TestLeaderboards.ownscores,
 					TestPlayerLevels.create,
 					TestPlayerLevels.list,
 					TestPlayerLevels.rate,

@@ -11,11 +11,11 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.list";
 			
 			var achievements:Array = [
-				{ fields: { rnd: rnd}, publickey: "testpublickey", achievement: "Super Mega Achievement #1", achievementkey: "secretkey", playerid: "1", playername: "ben" }, 
-				{ fields: { rnd: rnd}, publickey: "testpublickey", achievement: "Super Mega Achievement #1", achievementkey: "secretkey", playerid: "2", playername: "michelle" }, 
-				{ fields: { rnd: rnd}, publickey: "testpublickey", achievement: "Super Mega Achievement #1", achievementkey: "secretkey", playerid: "3", playername: "peter" },
-				{ fields: { rnd: rnd}, publickey: "testpublickey", achievement: "Super Mega Achievement #2", achievementkey: "secretkey2", playerid: "3", playername: "peter" }, 
-				{ fields: { rnd: rnd}, publickey: "testpublickey", achievement: "Super Mega Achievement #2", achievementkey: "secretkey2", playerid: "2", playername: "michelle" }
+				{ fields: { rnd: rnd}, achievement: "Super Mega Achievement #1", achievementkey: "secretkey", playerid: "1", playername: "ben" }, 
+				{ fields: { rnd: rnd}, achievement: "Super Mega Achievement #1", achievementkey: "secretkey", playerid: "2", playername: "michelle" }, 
+				{ fields: { rnd: rnd}, achievement: "Super Mega Achievement #1", achievementkey: "secretkey", playerid: "3", playername: "peter" },
+				{ fields: { rnd: rnd}, achievement: "Super Mega Achievement #2", achievementkey: "secretkey2", playerid: "3", playername: "peter" }, 
+				{ fields: { rnd: rnd}, achievement: "Super Mega Achievement #2", achievementkey: "secretkey2", playerid: "2", playername: "michelle" }
 			];
 			
 			function s():void {
@@ -32,7 +32,6 @@ package com.playtomic.as3
 				} 
 				
 				var options:Object = {
-					publickey: "testpublickey",
 					filters: { rnd: rnd }
 				};
 				
@@ -54,7 +53,6 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.listWithFriends";
 			
 			var options:Object = {
-				publickey: "testpublickey",
 				friendslist: ["1", "2", "3"],
 				filters: { rnd: rnd }
 			};
@@ -84,7 +82,6 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.listWithPlayer";
 			
 			var options:Object = {
-				publickey: "testpublickey",
 				playerid: "1",
 				filters: { rnd: rnd }
 			};
@@ -111,7 +108,6 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.listWithPlayerAndFriends";
 			
 			var options:Object = {
-				publickey: "testpublickey",
 				playerid: "1", 
 				friendslist: ["2", "3"],
 				filters: { rnd: rnd }
@@ -145,7 +141,6 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.stream";
 			
 			var options:Object = {
-				publickey: "testpublickey",
 				filters: { rnd: rnd }
 			};
 			
@@ -174,7 +169,6 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.streamWithFriends";
 			
 			var options:Object = {
-				publickey: "testpublickey",
 				group: true,
 				friendslist: ["2", "3"],
 				filters: { rnd: rnd }
@@ -200,7 +194,6 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.streamWithPlayerAndFriends";
 			
 			var options:Object = {
-				publickey: "testpublickey",
 				group: true,
 				playerid: "1",
 				friendslist: ["2", "3"],
@@ -230,7 +223,6 @@ package com.playtomic.as3
 			var section:String = "TestAchievements.save";
 			
 			var achievement:Object = {
-				publickey: "testpublickey",
 				achievement: "Super Mega Achievement #1",
 				achievementkey: "secretkey",
 				playerid: rnd.toString(),

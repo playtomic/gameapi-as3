@@ -4,9 +4,9 @@ package com.playtomic.as3
 	{
 		public static var rnd:int;
 		
-		public static function firstscore(done:Function):void {
+		public static function firstScore(done:Function):void {
 			
-			var section:String = "TestLeaderboards.newscore";
+			var section:String = "TestLeaderboards.firstScore";
 			
 			var score:Object = {
 				table: "scores" + rnd,
@@ -53,9 +53,9 @@ package com.playtomic.as3
 			});
 		}
 			
-		public static function secondscore(done:Function):void {
+		public static function secondScore(done:Function):void {
 			
-			var section:String = "TestLeaderboards.newscore2";
+			var section:String = "TestLeaderboards.secondScore";
 			
 			var score:Object=  {
 				name: "person2",
@@ -75,9 +75,9 @@ package com.playtomic.as3
 			});
 		}
 		
-		public static function highscores(done:Function):void {
+		public static function highScores(done:Function):void {
 			
-			var section:String = "TestLeaderboards.highscores";
+			var section:String = "TestLeaderboards.highScores";
 			
 			var list:Object = {
 				table: "scores" + rnd,
@@ -104,9 +104,9 @@ package com.playtomic.as3
 			});
 		}
 			
-		public static function lowscores(done:Function):void {
+		public static function lowScores(done:Function):void {
 			
-			var section:String = "TestLeaderboards.lowscores";
+			var section:String = "TestLeaderboards.lowScores";
 			
 			var list:Object = {
 				table: "scores" + rnd,
@@ -135,9 +135,9 @@ package com.playtomic.as3
 			});
 		}
 			
-		public static function allscores(done:Function):void {
+		public static function allScores(done:Function):void {
 			
-			var section:String = "TestLeaderboards.allscores";
+			var section:String = "TestLeaderboards.allScores";
 			
 			var list:Object = {
 				table: "scores"  +rnd,
@@ -164,9 +164,9 @@ package com.playtomic.as3
 			});
 		}
 		
-		public static function friendsscores(done:Function):void {
+		public static function friendsScores(done:Function):void {
 			
-			var section:String = "TestLeaderboards.friendsscores";
+			var section:String = "TestLeaderboards.friendsScores";
 			var playerids:Array = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 			var points:int = 0;
 			
@@ -220,9 +220,9 @@ package com.playtomic.as3
 			nextPlayerId();
 		}
 		
-		public static function ownscores(done:Function):void {
+		public static function ownScores(done:Function):void {
 			
-			var section:String = "TestLeaderboards.ownscores";
+			var section:String = "TestLeaderboards.ownScores";
 			var points:int = 0;
 			var saved:int = 0;
 			

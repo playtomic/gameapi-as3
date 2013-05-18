@@ -8,8 +8,7 @@ package com.playtomic.as3
 		
 		public static function list(done:Function):void {
 			
-			var section:String = "achievements.list";
-			trace(section);
+			var section:String = "TestAchievements.list";
 			
 			var achievements:Array = [
 				{ fields: { rnd: rnd}, publickey: "testpublickey", achievement: "Super Mega Achievement #1", achievementkey: "secretkey", playerid: "1", playername: "ben" }, 
@@ -52,7 +51,7 @@ package com.playtomic.as3
 		
 		public static function listWithFriends(done:Function):void {
 
-			var section:String = "achievements.listwithfriends";
+			var section:String = "TestAchievements.listWithFriends";
 			
 			var options:Object = {
 				publickey: "testpublickey",
@@ -82,7 +81,7 @@ package com.playtomic.as3
 		
 		public static function listWithPlayer(done:Function):void {
 			
-			var section:String = "achievements.listwithplayer";
+			var section:String = "TestAchievements.listWithPlayer";
 			
 			var options:Object = {
 				publickey: "testpublickey",
@@ -109,7 +108,7 @@ package com.playtomic.as3
 		
 		public static function listWithPlayerAndFriends(done:Function):void {
 			
-			var section:String = "achievements.listwithplayerandfriends";
+			var section:String = "TestAchievements.listWithPlayerAndFriends";
 			
 			var options:Object = {
 				publickey: "testpublickey",
@@ -143,7 +142,7 @@ package com.playtomic.as3
 		
 		public static function stream(done:Function):void {
 			
-			var section:String = "achievements.stream";
+			var section:String = "TestAchievements.stream";
 			
 			var options:Object = {
 				publickey: "testpublickey",
@@ -172,7 +171,7 @@ package com.playtomic.as3
 		
 		public static function streamWithFriends(done:Function):void {
 			
-			var section:String = "achievements.streamwithfriends";
+			var section:String = "TestAchievements.streamWithFriends";
 			
 			var options:Object = {
 				publickey: "testpublickey",
@@ -198,7 +197,7 @@ package com.playtomic.as3
 		
 		public static function streamWithPlayerAndFriends(done:Function):void {
 			
-			var section:String = "achievements.streamwithplayerandfriends";
+			var section:String = "TestAchievements.streamWithPlayerAndFriends";
 			
 			var options:Object = {
 				publickey: "testpublickey",
@@ -228,7 +227,7 @@ package com.playtomic.as3
 		
 		public static function save(done:Function):void {
 			
-			var section:String = "achievements.save";
+			var section:String = "TestAchievements.save";
 			
 			var achievement:Object = {
 				publickey: "testpublickey",

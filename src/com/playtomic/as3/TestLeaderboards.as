@@ -10,7 +10,7 @@ package com.playtomic.as3
 			
 			var score:Object = {
 				table: "scores" + rnd,
-				name: "person1",
+				playername: "person1",
 				points: 10000,
 				highest: true,
 				fields: { 
@@ -58,7 +58,7 @@ package com.playtomic.as3
 			var section:String = "TestLeaderboards.secondScore";
 			
 			var score:Object=  {
-				name: "person2",
+				playername: "person2",
 				table: "scores" + rnd,
 				points: 20000,
 				allowduplicates: true,
@@ -176,7 +176,7 @@ package com.playtomic.as3
 				var playerid:String = playerids.shift();
 				
 				var score:Object=  {
-					name: "playerid" + playerid,
+					playername: "playerid" + playerid,
 					playerid: playerid,
 					table: "friends" + rnd,
 					points: points,
@@ -232,7 +232,7 @@ package com.playtomic.as3
 				saved++;
 				
 				var score:Object=  {
-					name: "test account",
+					playername: "test account",
 					playerid: "test@testuri.com",
 					table: "personal" + rnd,
 					points: points,
@@ -251,7 +251,7 @@ package com.playtomic.as3
 					else 
 					{
 						var finalscore:Object=  {
-							name: "test account",
+							playername: "test account",
 							playerid: "test@testuri.com",
 							table: "personal" + rnd,
 							points: 3000,

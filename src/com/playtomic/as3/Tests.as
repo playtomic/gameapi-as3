@@ -42,23 +42,31 @@ package com.playtomic.as3
 			
 			function createTests():Array {
 				t.text = t.htmlText = "";
-				TestPlayerLevels.rnd = TestLeaderboards.rnd = Math.round(Math.random() * 10000000);
+				TestPlayerLevels.rnd = TestLeaderboards.rnd = TestAchievements.rnd = Math.round(Math.random() * 10000000);
 				
 				return [
 					TestGameVars.all,
 					TestGameVars.single,
 					TestGeoIP.lookup,
-					TestLeaderboards.firstscore,
-					TestLeaderboards.secondscore,
-					TestLeaderboards.highscores,
-					TestLeaderboards.lowscores,
-					TestLeaderboards.allscores,
-					TestLeaderboards.friendsscores,
-					TestLeaderboards.ownscores,
+					TestLeaderboards.firstScore,
+					TestLeaderboards.secondScore,
+					TestLeaderboards.highScores,
+					TestLeaderboards.lowScores,
+					TestLeaderboards.allScores,
+					TestLeaderboards.friendsScores,
+					TestLeaderboards.ownScores,
 					TestPlayerLevels.create,
 					TestPlayerLevels.list,
 					TestPlayerLevels.rate,
-					TestPlayerLevels.load
+					TestPlayerLevels.load,
+					TestAchievements.list,
+					TestAchievements.listWithFriends,
+					TestAchievements.listWithPlayer,
+					TestAchievements.listWithPlayerAndFriends,
+					TestAchievements.stream,
+					TestAchievements.streamWithFriends,
+					TestAchievements.streamWithPlayerAndFriends,
+					TestAchievements.save
 				];
 			}
 			

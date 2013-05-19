@@ -127,8 +127,8 @@ package com.playtomic.as3
 				assertFalse(section, "Achievement 3 has no player", achievements[2].hasOwnProperty("player"));
 				assertTrue(section, "Achievement 1 player", achievements[0].player.playername == "ben");
 				assertTrue(section, "Achievement 1 has 2 friend", achievements[0].friends.length == 2);
-				assertTrue(section, "Achievement 1 friend 2", achievements[0].friends[0].playername == "michelle");
-				assertTrue(section, "Achievement 1 friend 3", achievements[0].friends[1].playername == "peter");
+				assertTrue(section, "Achievement 1 friend 1", achievements[0].friends[0].playername == "michelle");
+				assertTrue(section, "Achievement 1 friend 2", achievements[0].friends[1].playername == "peter");
 				assertTrue(section, "Achievement 2 has 2 friend", achievements[1].friends.length == 2);
 				assertTrue(section, "Achievement 2 friend 1", achievements[1].friends[0].playername == "michelle");
 				assertTrue(section, "Achievement 2 friend 2", achievements[1].friends[1].playername == "peter");
@@ -149,16 +149,16 @@ package com.playtomic.as3
 				assertEquals(section, "No errorcode", r.errorcode, 0);
 				assertTrue(section, "5 achievements returned", achievements.length == 5);
 				assertTrue(section, "5 achievements in total", numachievements == 5);
-				assertTrue(section, "Achievement 5 person", achievements[0].playername == "michelle");
-				assertTrue(section, "Achievement 5 achievement", achievements[0].awarded.achievement == "Super Mega Achievement #2");
-				assertTrue(section, "Achievement 4 person", achievements[1].playername == "peter");
-				assertTrue(section, "Achievement 4 achievement", achievements[1].awarded.achievement == "Super Mega Achievement #2");
+				assertTrue(section, "Achievement 1 person", achievements[0].playername == "michelle");
+				assertTrue(section, "Achievement 1 achievement", achievements[0].awarded.achievement == "Super Mega Achievement #2");
+				assertTrue(section, "Achievement 2 person", achievements[1].playername == "peter");
+				assertTrue(section, "Achievement 2 achievement", achievements[1].awarded.achievement == "Super Mega Achievement #2");
 				assertTrue(section, "Achievement 3 person", achievements[2].playername == "peter");
 				assertTrue(section, "Achievement 3 achievement", achievements[2].awarded.achievement == "Super Mega Achievement #1");
-				assertTrue(section, "Achievement 2 person", achievements[3].playername == "michelle");
-				assertTrue(section, "Achievement 2 achievement", achievements[3].awarded.achievement == "Super Mega Achievement #1");					
-				assertTrue(section, "Achievement 1 person", achievements[4].playername == "ben");
-				assertTrue(section, "Achievement 1 achievement", achievements[4].awarded.achievement == "Super Mega Achievement #1");
+				assertTrue(section, "Achievement 4 person", achievements[3].playername == "michelle");
+				assertTrue(section, "Achievement 4 achievement", achievements[3].awarded.achievement == "Super Mega Achievement #1");					
+				assertTrue(section, "Achievement 5 person", achievements[4].playername == "ben");
+				assertTrue(section, "Achievement 5 achievement", achievements[4].awarded.achievement == "Super Mega Achievement #1");
 				
 				done();
 			});
@@ -177,8 +177,8 @@ package com.playtomic.as3
 			Achievements.stream(options, function(achievements:Array, numachievements:int, r:Response):void {
 				assertTrue(section, "Request succeeded", r.success);
 				assertEquals(section, "No errorcode", r.errorcode, 0);
-				assertTrue(section, "5 achievements returned", achievements.length == 2);
-				assertTrue(section, "5 achievements in total", numachievements == 2);
+				assertTrue(section, "2 achievements returned", achievements.length == 2);
+				assertTrue(section, "2 achievements in total", numachievements == 2);
 				assertTrue(section, "Achievement 1 awards", achievements[0].awards == 2);
 				assertTrue(section, "Achievement 1 achievement", achievements[0].awarded.achievement == "Super Mega Achievement #2");
 				assertTrue(section, "Achievement 1 person", achievements[0].playername == "michelle");
@@ -203,8 +203,8 @@ package com.playtomic.as3
 			Achievements.stream(options, function(achievements:Array, numachievements:int, r:Response):void {
 				assertTrue(section, "Request succeeded", r.success);
 				assertEquals(section, "No errorcode", r.errorcode, 0);
-				assertTrue(section, "5 achievements returned", achievements.length == 3);
-				assertTrue(section, "5 achievements in total", numachievements == 3);
+				assertTrue(section, "3 achievements returned", achievements.length == 3);
+				assertTrue(section, "3 achievements in total", numachievements == 3);
 				assertTrue(section, "Achievement 1 person", achievements[0].playername == "michelle");
 				assertTrue(section, "Achievement 1 awards", achievements[0].awards == 2);
 				assertTrue(section, "Achievement 1 achievement", achievements[0].awarded.achievement == "Super Mega Achievement #2");

@@ -48,6 +48,7 @@ package com.playtomic.as3
 					TestGameVars.all,
 					TestGameVars.single,
 					TestGeoIP.lookup,
+					TestNewsletter.subscribe,
 					TestLeaderboards.firstScore,
 					TestLeaderboards.secondScore,
 					TestLeaderboards.highScores,

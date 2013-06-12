@@ -254,10 +254,13 @@ package com.playtomic.as3
 							playername: "test account",
 							playerid: "test@testuri.com",
 							table: "personal" + rnd,
-							points: 3000,
+							points: 2500,
 							highest: true,
 							allowduplicates: true,
 							fields: {
+								rnd: rnd
+							},
+							filters: { 
 								rnd: rnd
 							},
 							perpage: 5
@@ -278,7 +281,8 @@ package com.playtomic.as3
 							assertTrue(section, "Score 5 ranked 10", scores[4].rank == 10);
 							assertTrue(section, "Score 1 points", scores[0].points == 4000);
 							assertTrue(section, "Score 2 points", scores[1].points == 3000);
-							assertTrue(section, "Score 3 points", scores[2].points == 3000);
+							assertTrue(section, "Score 3 points", scores[2].points == 2500);
+							assertTrue(section, "Score 3 submitted", scores [2].submitted);
 							assertTrue(section, "Score 4 points", scores[3].points == 2000);
 							assertTrue(section, "Score 5 points", scores[4].points == 1000);
 							done();
